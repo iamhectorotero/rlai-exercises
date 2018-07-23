@@ -1,9 +1,11 @@
-# Exercise 2.1 
+# Exercise 2.1
   
 ## Question:
-In the comparison shown in Figure  2.1, which method will perform best in the long run in
-terms of cumulative reward and cumulative probability of selecting the best action? How much better will it be?
+In ε-greedy action selection, for the case of two actions and ε = 0.5,
+what is the probability thtat the greedy action is selected?
 
 ## Answer:
-e of 0.01% will perform better in the long run as it will end up choosing the correct actions 99.1% of the time,
-versus 91% of the time for e of 0.1%, a difference of 8.1%
+0.5 + 0.5 \* 0.5 = 0.75
+
+50% of the times it'll be selected greedily (because it is the best choice) and half of the
+times the action is selected randomly it will be selected by chance.
