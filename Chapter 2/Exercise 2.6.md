@@ -1,7 +1,7 @@
 # Exercise 2.6
 
 ## Question:
-The results shown in Figure 2.4 should be quite reliable because they
+The results shown in Figure 2.3 should be quite reliable because they
 are averages over 2000 individual, randomly chosen 10-armed bandit 
 tasks. Why, then, are there oscillations and spikes in the early part 
 of the curve for the optimistic method? In other words, what might 
