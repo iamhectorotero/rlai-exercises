@@ -1,0 +1,29 @@
+\documentclass[12pt]{article}
+
+\usepackage[margin=1in]{geometry}
+
+\begin{document}
+\thispagestyle{empty}
+
+\noindent Using the definition of the \textbf{sigmoid function} we would have:
+
+$$Pr\{A_t = a\} = \frac{e^{H_t(a)}}{e^{H_t(a)} + 1}$$
+$$Pr\{A_t = b\} = 1 - Pr\{A_t = a\} = \frac{1}{e^{H_t(a)} + 1}$$
+
+\noindent Extending the definition of the \textbf{soft-max distribution} for the case of two actions (k=2) we get the following:
+
+$$Pr\{A_t=a\} = \frac{e^{H_t(a)}}{e^{H_t(a)} + e^{H_t(b)}}$$
+$$Pr\{A_t=b\} = \frac{e^{H_t(b)}}{e^{H_t(a)} + e^{H_t(b)}}$$
+
+\noindent According to the definition of the \textit{numerical preference}, if we substract an amount from each of the preferences
+it does not affect the probabilities. So we can redifine $H_t(a)$ and $H_t(b)$ as:
+
+$$H_t(b) \leftarrow  H_t(b) - H_t(b) = 0$$
+$$H_t(a) \leftarrow  H_t(a) - H_t(b) = H_t(a)$$
+
+\noindent and we get:
+
+$$Pr\{A_t=a\} = \frac{e^{H_t(a)}}{e^{H_t(a)} + e^0} = \frac{e^{H_t(a)}}{e^{H_t(a)} + 1} $$
+$$Pr\{A_t=b\} = \frac{e^{0}}{e^{H_t(a)} + e^{0}} = \frac{1}{e^{H_t(a)} + 1}$$
+
+\end{document}
