@@ -7,5 +7,5 @@ artificial neural networks.
 
 ## Answer:
 
-![Exercise 2.7 solution](images/Exercise 2.7.png)
+![Exercise 2.7 solution](images/Exercise_2_7.png)
 
