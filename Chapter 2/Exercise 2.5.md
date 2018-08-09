@@ -12,7 +12,7 @@ and another action-value method using a constant step-size
 parameter, α = 0.1. Use ε = 0.1 and longer runs, say of 10,000 steps.
 
 ## Answer:
-Run Exercise 2.5.py
+Run code/Exercise 2.5.py
 
 ![Average Reward](images/average_reward.png)
 
