@@ -40,8 +40,8 @@ if __name__ == "__main__":
         testbed = K_armed_testbed(k_actions=K)
 
         action_value_estimates = np.full(K, fill_value=0.0)
-        sample_average_estimator = SampleAverageEstimator(np.full(K, fill_value=0.0), epsilon=0.1)
-        weighted_estimator = WeightedEstimator(np.full(K, fill_value=0.0), epsilon=0.1, alpha=0.1)
+        sample_average_estimator = SampleAverageEstimator(action_value_estimates.copy(), epsilon=0.1)
+        weighted_estimator = WeightedEstimator(action_value_estimates.copy(), epsilon=0.1, alpha=0.1)
 
         estimators = [sample_average_estimator, weighted_estimator]
 
