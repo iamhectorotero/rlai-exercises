@@ -1,7 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 from tqdm import tqdm
-from estimators import SampleAverageEstimator, WeightedEstimator, GradientBandit
+from estimators import SampleAverageEstimator, WeightedEstimator
 from testbed import K_armed_testbed
 
 np.random.seed(250)
@@ -29,7 +29,7 @@ def plot_performance(estimator_names, rewards, action_optimality):
 if __name__ == "__main__":
     K = 10
     N_STEPS = 10000
-    N_RUNS = 100
+    N_RUNS = 2000
     N_ESTIMATORS = 2
 
     rewards = np.full((N_ESTIMATORS, N_RUNS, N_STEPS), fill_value=0.)
@@ -38,10 +38,12 @@ if __name__ == "__main__":
     for run_i in tqdm(range(N_RUNS)):
 
         testbed = K_armed_testbed(k_actions=K)
-        sample_average_estimator = SampleAverageEstimator(action_value_initial_estimates=np.full(K, fill_value=0.0), epsilon=0.1)
-        weighted_estimator = WeightedEstimator(action_value_initial_estimates=np.full(K, fill_value=0.0), epsilon=0.1, alpha=0.1)
 
-        estimators = [weighted_estimator, gradient_bandit]
+        action_value_estimates = np.full(K, fill_value=0.0)
+        sample_average_estimator = SampleAverageEstimator(np.full(K, fill_value=0.0), epsilon=0.1)
+        weighted_estimator = WeightedEstimator(np.full(K, fill_value=0.0), epsilon=0.1, alpha=0.1)
+
+        estimators = [sample_average_estimator, weighted_estimator]
 
         for step_i in range(N_STEPS):
             for estimator_i, estimator in enumerate(estimators):

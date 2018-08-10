@@ -1,5 +1,4 @@
 import numpy as np
-from numpy.random import normal as GaussianDistribution
 
 
 class Estimator(object):
@@ -104,13 +103,14 @@ class GradientBandit(Estimator):
     def update_estimates(self, action_selected, r):
         self.update_average_reward(r)
 
-        probabilities = self.get_actions_probabilities()
+        P = self.get_actions_probabilities()
         baseline = self.average_reward
 
-        updated_numerical_preference = self.numerical_preference - self.alpha * (r - baseline) * probabilities
-        updated_numerical_preference[action_selected] = self.numerical_preference[action_selected] + self.alpha * (r - baseline) * (1 - probabilities[action_selected])
+        ht = self.numerical_preference
+        htp1 = ht - self.alpha * (r - baseline) * P
+        htp1[action_selected] = ht[action_selected] + self.alpha * (r - baseline) * (1 - P[action_selected])
 
-        self.numerical_preference = updated_numerical_preference
+        self.numerical_preference = htp1
 
     def get_actions_probabilities(self):
         exp_numerical_preference = np.exp(self.numerical_preference)
