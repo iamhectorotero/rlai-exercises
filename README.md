@@ -5,4 +5,4 @@ You can find an online version of the book [HERE](http://incompleteideas.net/boo
 
 I have no guarantees for any of the solutions' correctness so if you see any mistakes or think any of the solutions lack completeness or you simply want to start a discussion on them, please feel free to let me know or submit an issue or pull request.
 
-**NOTE:** Exercises 1.1-1.5, 2.3, 2.4, 2.6, 3.2-3.11 come from [JKCooper2's repository](https://github.com/JKCooper2/rlai-exercises)
+**NOTE:** Exercises 1.1-1.5, 2.3, 2.4, 2.6, 3.3-3.11 come from [JKCooper2's repository](https://github.com/JKCooper2/rlai-exercises)
